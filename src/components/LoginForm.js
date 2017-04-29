@@ -13,7 +13,7 @@ export default class LoginForm extends Component {
       .then(() => this.onLoginSuccess())
       .catch(() => {
         firebase.auth().createUserWithEmailAndPassword(email, password)
-          .then(this.onLoginSuccess())
+          .then(() => this.onLoginSuccess())
           .catch(err => this.onLoginFailure(err))
       });
   }
